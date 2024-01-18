@@ -17,6 +17,17 @@ header {
   background: linear-gradient(to bottom, #172755 79%, transparent 79%);
 }
 
+header::before {
+  content: "";
+  background: #172755;
+  height: 90%;
+  position: absolute;
+  inset: 0;
+  transform: skewY(-5deg);
+  border-bottom: 10px solid rgb(249, 88, 115);
+  z-index: 0;
+}
+
 nav {
   width: 1200px;
   max-width: 100%;
@@ -25,22 +36,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
-}
-
-.blueDiag {
-  width: 100%;
-  height: 21%;
-  position: absolute;
-  bottom: 0;
-  background: linear-gradient(to bottom right, #172755 46%, transparent 46%);
-}
-
-.pinkDiag {
-  position: absolute;
-  bottom: 0;
-  height: 21%;
-  width: 100%;
-  background: linear-gradient(to bottom right, #ef2a82 50%, transparent 50%);
+  z-index: 2;
+  position: relative;
 }
 
 nav ul {
@@ -71,6 +68,7 @@ nav button {
   border: none;
   margin-right: 10px;
   cursor: pointer;
+  position: relative;
 }
 
 nav div button:nth-child(2) {
@@ -91,6 +89,8 @@ nav div button:nth-child(2) {
   flex-direction: column;
   justify-content: center;
   margin-top: 150px;
+  position: relative;
+  z-index: 2;
 }
 
 .mainContent h1 {
@@ -146,6 +146,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 120px;
+  /* position: relative; */
+  /* z-index: -2; */
 }
 
 main .first h2 {
@@ -240,28 +242,23 @@ footer {
   justify-content: center;
 }
 
-.footWraper {
+footer::after {
+  content: "";
+  background: #172755;
+  height: 30%;
+  position: absolute;
+  inset: 0;
+  transform: skewY(-5deg);
+  border-top: 10px solid rgb(249, 88, 115);
+}
+
+.footWrapper {
   width: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.blueDiagFoot {
-  width: 100%;
-  height: 21%;
-  position: absolute;
-  top: 0;
-  background: linear-gradient(to bottom right, transparent 52%, #172755 52%);
-}
-
-.pinkDiagFoot {
-  position: absolute;
-  top: 0;
-  height: 21%;
-  width: 100%;
-  background: linear-gradient(to bottom right, transparent 50%, #ef2a82 50%);
+  z-index: 1;
 }
 
 .footHeader {
